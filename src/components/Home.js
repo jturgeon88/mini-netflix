@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import MovieRow from './MovieRow'
 
-const movies = [
+const movieCategories = [
   {title: 'My List'},
   {title: 'Popular on Netflix'},
   {title: 'Continue watching'},
@@ -11,7 +11,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        {movies.map(movie => <MovieRow title={movie.title} />)}
+        {movieCategories.map(movie => <MovieRow title={movie.title} />)}
       </div>
     )
   }
