@@ -1,0 +1,8 @@
+.header-nav-container {
+  display: flex;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
