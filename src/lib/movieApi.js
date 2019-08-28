@@ -1,12 +1,13 @@
 import axios from 'axios'
 
-// fetch the top 20 upcoming movies objects from TMDB
-export const fetchUpcoming = () => {
+// fetch an array of movie objects from TMDB based on given url and optional query params
+export const fetchMovies = (url, query?) => {
   const axiosOpt = {
-    url: '/movie/upcoming',
+    url,
     params: {
       language: 'en-US',
-      page: 1
+      page: 1,
+      query: query
     }
   }
   return movieApiRequest(axiosOpt)
@@ -15,7 +16,7 @@ export const fetchUpcoming = () => {
 // Fetch single movie object by specific movie title
 export const fetchMovieByTitle = (title) => {
   const axiosOpt = {
-    url: '/search/movie?',
+    url: '/search/movie',
     params: {
       query: title
     }
