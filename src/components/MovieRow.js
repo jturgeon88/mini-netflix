@@ -27,8 +27,8 @@ class MovieRow extends Component {
     const { category } = this.props
     return (
       <div className="movie-row-container">
-        <div>{category.title}</div>
-        <div>{this.state.movies.map(movie => <MovieTile movie={movie} />)}</div>
+        <h2 className="movie-row-title">{category.title}</h2>
+        <div className="movie-row">{this.state.movies.map(movie => <MovieTile movie={movie} />)}</div>
       </div>
     )
   }
