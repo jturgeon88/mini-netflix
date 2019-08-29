@@ -28,7 +28,7 @@ class MovieRow extends Component {
     return (
       <div className="movie-row-container">
         <h2 className="movie-row-title">{category.title}</h2>
-        <div className="movie-row">{this.state.movies.map((movie, index) => <MovieTile key={index} movie={movie} />)}</div>
+        <div className="movie-row">{this.state.movies.map((movie) => <MovieTile key={movie.id} movie={movie} />)}</div>
       </div>
     )
   }
