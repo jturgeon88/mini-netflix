@@ -1,7 +1,30 @@
 .movie-row-container {
+  overflow-x: auto;
+}
+
+.movie-row-title {
+  font-size: 1.8vw;
+}
+
+.movie-row {
+  display: flex;
+  padding: 0 3vw 3vw 3vw;
+  overflow-y: visible;
 }
 
 .movie-tile-container {
-  display: flex;
+  margin: 0 2px;
+  transition: transform 300ms ease 100ms;
+}
 
+.movie-row:hover .movie-tile-container {
+   transform: translateX(-25%);
+}
+
+.movie-tile-container:hover ~ .movie-tile-container {
+   transform: translateX(25%);
+}
+
+.movie-tile-container:hover {
+  transform: scale(1.5) !important;
 }
