@@ -1,13 +1,32 @@
 import React, { Component } from 'react'
+import ResponsivePlayer from './ResponsivePlayer'
+import { fetchVideo } from '../lib/movieApi';
+import '../styles/MovieDetails.css'
 
-const MovieDetails = ({ video }) => {
-  return (
-    <div className="movie-tile-container">
-      <video width="320" height="240" controls>
-        <source src={video} type="video/mp4">
-      </video>
-    </div>
-  )
+class MovieDetails extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      videoKey: ''
+    }
+  }
+
+  componentWillMount() {
+    const { match } = this.props
+    fetchVideo(match.params.id)
+    .then(data => {
+      this.setState({videoKey: data.results[0].key})
+    })
+  }
+
+  render() {
+    const { videoKey } = this.state
+    return (
+      <div className="movie-details-container">
+        <ResponsivePlayer videoKey={this.state.videoKey} />
+      </div>
+    )
+  }
 }
 
 export default MovieDetails
