@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../styles/MovieRow.css'
 import MovieTile from './MovieTile'
-import { fetchMovies } from '../lib/movieApi';
+import * as movieApi from '../lib/movieApi';
 
 class MovieRow extends Component {
   constructor (props) {
@@ -13,7 +13,7 @@ class MovieRow extends Component {
 
   componentDidMount() {
     const { category } = this.props
-    this.fetchMovies(() => fetchMovies(category.url, category.searchTitle));
+    this.fetchMovies(() => movieApi.fetchMovies(category.url, category.searchTitle));
   }
 
   fetchMovies = (movieFunction) => (
@@ -28,7 +28,7 @@ class MovieRow extends Component {
     return (
       <div className="movie-row-container">
         <h2 className="movie-row-title">{category.title}</h2>
-        <div className="movie-row">{this.state.movies.map(movie => <MovieTile movie={movie} />)}</div>
+        <div className="movie-row">{this.state.movies.map((movie, index) => <MovieTile key={index} movie={movie} />)}</div>
       </div>
     )
   }

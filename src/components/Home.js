@@ -11,7 +11,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        {movieCategories.map(category => <MovieRow category={category} />)}
+        {movieCategories.map((category, index) => <MovieRow key={index} category={category} />)}
       </div>
     )
   }
