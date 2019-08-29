@@ -5,8 +5,8 @@ class HeaderNav extends Component {
   render() {
     return (
       <div className="header-nav-container">
-        <span>
-          Logo
+        <span className="header-logo">
+          MINI-FLIX
         </span>
         <ul className="nav-links">
           <li>
