@@ -24,11 +24,22 @@ export const fetchMovieByTitle = (title) => {
   return movieApiRequest(axiosOpt)
 }
 
+export const fetchVideo = (id) => {
+  const axiosOpt = {
+    url: `/movie/${id}/videos`,
+    params: {
+      language: 'en-US',
+      page: 1,
+    }
+  }
+  return movieApiRequest(axiosOpt)
+}
+
 // Helper method for making axios requests
 const movieApiRequest = (axiosOpt) => {
   let axiosArgs = {
     ...axiosOpt,
-    baseURL: 'https://api.themoviedb.org/3'
+    baseURL: axiosOpt.baseURL ? axiosOpt.baseURL : 'https://api.themoviedb.org/3'
   }
   axiosArgs.params.api_key = process.env.REACT_APP_API_KEY
 

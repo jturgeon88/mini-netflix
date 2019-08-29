@@ -1,5 +1,6 @@
 .header-nav-container {
   display: flex;
+  height: 8vh;
 }
 
 .nav-links {
