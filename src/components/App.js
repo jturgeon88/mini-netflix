@@ -1,10 +1,9 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import logo from '../logo.svg'
 import '../styles/App.css'
-import Home from './Home'
-import HeaderNav from './HeaderNav'
+import ContentPage from './ContentPage'
 import MovieDetails from './MovieDetails'
 
 function App() {
@@ -12,9 +11,8 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/movies/:id" component={MovieDetails} />
-        <Route path="/" component={HeaderNav} />
+        <Route path="/" component={ContentPage} />
       </Switch>
-      <Route exact path="/" component={Home} />
     </Router>
   );
 }
