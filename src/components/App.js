@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 import logo from '../logo.svg'
 import '../styles/App.css'
@@ -10,9 +10,11 @@ import MovieDetails from './MovieDetails'
 function App() {
   return (
     <Router>
-      <Route path="/" component={HeaderNav} />
+      <Switch>
+        <Route exact path="/movies/:id" component={MovieDetails} />
+        <Route path="/" component={HeaderNav} />
+      </Switch>
       <Route exact path="/" component={Home} />
-      <Route path="/:id" component={MovieDetails} />
     </Router>
   );
 }
