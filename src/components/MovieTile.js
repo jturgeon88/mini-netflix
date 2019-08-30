@@ -12,7 +12,7 @@ const MovieTile = ({ movie }) => {
 
   return (
     <div className="movie-tile-container">
-      <Link to={`/${movie.id}`}>
+      <Link to={`/movies/${movie.id}`}>
         <PosterComp src={poster}></PosterComp>
       </Link>
     </div>

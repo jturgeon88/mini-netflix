@@ -1,29 +1,27 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 import '../styles/HeaderNav.css'
 
 class HeaderNav extends Component {
   render() {
     return (
       <div className="header-nav-container">
-        <span>
-          Logo
-        </span>
+        <Link to="/" className="header-logo">
+          MINI-FLIX
+        </Link>
         <ul className="nav-links">
-          <li>
-            <a>Home</a>
-          </li>
-          <li>
-            <a>Movies</a>
-          </li>
-          <li>
-            <a>Series</a>
-          </li>
-          <li>
-            <a>Recently Added</a>
-          </li>
-          <li>
-            <a>My List</a>
-          </li>
+          <Link to="/">
+            Home
+          </Link>
+          <Link to="/movies">
+            Movies
+          </Link>
+          <Link to="/series">
+            Series
+          </Link>
+          <Link to="/my-list">
+            My List
+          </Link>
         </ul>
       </div>
     )

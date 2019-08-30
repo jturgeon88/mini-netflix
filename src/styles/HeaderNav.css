@@ -1,9 +1,37 @@
 .header-nav-container {
   display: flex;
-  height: 8vh;
+  top: 0px;
+  position: fixed;
+  background: #000;
+  width: 100%;
+  align-items: center;
+  height: 70px;
+  font-size: 14px;
+  z-index: 3;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
+  justify-content: space-around;
+  min-width: 320px;
+  width: 20%;
+}
+
+.nav-links a {
+  color: #e5e5e5;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #b3b3b3;
+}
+
+.header-logo {
+  text-decoration: none;
+  font-weight: 900;
+  margin-left: 20px;
+  font-size: 20px;
+  font-style: oblique;
+  color: #00d2df;
 }

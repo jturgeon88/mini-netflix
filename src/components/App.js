@@ -1,18 +1,18 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import logo from '../logo.svg'
 import '../styles/App.css'
-import Home from './Home'
-import HeaderNav from './HeaderNav'
+import ContentPage from './ContentPage'
 import MovieDetails from './MovieDetails'
 
 function App() {
   return (
     <Router>
-      <Route path="/" component={HeaderNav} />
-      <Route exact path="/" component={Home} />
-      <Route path="/:id" component={MovieDetails} />
+      <Switch>
+        <Route exact path="/movies/:id" component={MovieDetails} />
+        <Route path="/" component={ContentPage} />
+      </Switch>
     </Router>
   );
 }
