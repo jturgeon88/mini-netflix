@@ -11,7 +11,7 @@ const MovieTile = ({ movie }) => {
   const poster = `https://image.tmdb.org/t/p/w440_and_h660_bestv2/${movie.poster_path}`
 
   return (
-    <div className="movie-tile-container">
+    <div data-testid="movie-tile" className="movie-tile-container">
       <Link to={`/movies/${movie.id}`}>
         <PosterComp src={poster}></PosterComp>
       </Link>

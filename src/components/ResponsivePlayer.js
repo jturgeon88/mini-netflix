@@ -12,6 +12,7 @@ const ResponsivePlayer = ({ videoKey }) => {
         height='100%'
         playing
         controls
+        data-testid="react-player"
         />
     </div>
   )
