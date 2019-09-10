@@ -11,7 +11,7 @@ class MovieDetails extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const { match } = this.props
     fetchVideo(match.params.id)
     .then(data => {
@@ -22,7 +22,7 @@ class MovieDetails extends Component {
   render() {
     const { videoKey } = this.state
     return (
-      <div className="movie-details-container">
+      <div data-testid="movie-details" className="movie-details-container">
         <ResponsivePlayer videoKey={this.state.videoKey} />
       </div>
     )
